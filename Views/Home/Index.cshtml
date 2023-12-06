@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Employees_CRUD.Models.Emloyee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-black align-content-center">Employee Record</h1>
+            <table class="table table-bordered">
+                <tr class="text-md-center">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Manager</th>
+                    <th>IsActive</th>
+                    <th>Starting-Date</th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr class="text-sm-center">
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.ManagerId</td>
+                        <td>@item.IsActive</td>
+                        <td>@item.StartingDate</td>
+                        <td><a class="btn btn-sm btn-outline-warning" asp-action="EditEmployee" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-sm btn-danger"  asp-action="DeleteEmployee" asp-route-id="@item.Id">Delete</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    
+</div>

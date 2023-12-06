@@ -1,0 +1,43 @@
+﻿@* @model ICollection<Employees_CRUD.Models.Emloyee> *@
+@model Employees_CRUD.Models.Emloyee
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card-header">
+                <h1>Add-Employee</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="AddEmployee">
+                    <div class="form-control">
+                        @* @foreach (var item in Model)
+                        {
+                            <label asp-for="@item.Name"></label>
+                            <label asp-for="@item.ManagerId"></label>
+                            <label asp-for="@item.IsActive"></label>
+                            <label asp-for="@item.StartingDate"></label>
+                        } *@
+                        <label asp-for="Name"></label>
+                        <input type="text" asp-for="Name" class="form-control"></input>
+                        <label asp-for="ManagerId"></label>
+                        <input type="number" asp-for="ManagerId" class="form-control"></input>
+                        <label asp-for="IsActive"></label>
+                        <input type="text" asp-for="IsActive" class="form-control"></input>
+                        <label asp-for="StartingDate"></label>
+                        <input type="date" asp-for="StartingDate" class="form-control"></input>
+                        @* <label asp-for="ManagerId"></label>
+                        <label asp-for="IsActive"></label>
+                        <label asp-for="StartingDate"></label> *@
+                        <div class="form">
+                            <input type="submit"  value="Submit" class="btn btn-sm btn-outline-success float-right"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
